@@ -144,6 +144,10 @@ function! UltiSnips#LeavingInsertMode()
 endfunction
 
 function! UltiSnips#TrackChange()
+    if &ft =~ 'fuf'
+        " echomsg "fuf return!"
+        return
+    endif
     exec g:_uspy "UltiSnips_Manager._track_change()"
 endfunction
 
